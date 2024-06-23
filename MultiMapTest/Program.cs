@@ -11,9 +11,11 @@ namespace MultiMapTest
         static void Main(string[] args)
         {
             MultiMapWapper.CSharpMultiMap<int, int> test = new MultiMapWapper.CSharpMultiMap<int, int>();
+            MultiMapWapper.CSharpMultiMap<int, int> test1 = new MultiMapWapper.CSharpMultiMap<int, int>();
             for (int i = 11; i >= 0; i--)
             {
                 test.emplace(i + 1, (i + 2));
+                test1.emplace(i + 10, (i + 20));
             }
             foreach (var iter in test)
             {
@@ -113,12 +115,40 @@ namespace MultiMapTest
 
             Console.WriteLine("클리어 완료(Clear complete)");
             Console.WriteLine(StringClassMulitMap.size());
+
             Console.WriteLine("=====================================");
             Console.WriteLine("=====================================");
-            ClassStringMulitMap.erase(ClassStringMulitMap.begin(), ClassStringMulitMap.end());
-            Console.WriteLine(ClassStringMulitMap.size());
+            Console.WriteLine("===============Swap==================");
+            MultiMapWapper.CSharpMultiMap<myclass, string> ClassStringMulitMap1 = new MultiMapWapper.CSharpMultiMap<myclass, string>();
+
+            ClassStringMulitMap1.Swap(ClassStringMulitMap);
+            {
+                var testiter = ClassStringMulitMap1.end();
+                --testiter;
+                testiter.SetValue("밥먹었니?(Have you eaten?)");
+            }
+
+            for (var iter = ClassStringMulitMap1.begin(); iter != ClassStringMulitMap1.end(); ++iter)
+            {
+                Console.Write(iter.GetKey().name);
+                Console.Write(" <= 클래스 이름 : String 값=> ");//Class Name : String Value
+                Console.WriteLine(iter.GetValue());
+            }
+            Console.WriteLine("original multimap size : " + ClassStringMulitMap.size());
+            Console.WriteLine("=====================================");
+            Console.WriteLine("=====================================");
+            ClassStringMulitMap1.erase(ClassStringMulitMap1.begin(), ClassStringMulitMap1.end());
+            Console.WriteLine(ClassStringMulitMap1.size());
             Console.WriteLine("지우기 완료(Deletion complete)");
-            ClassStringMulitMap.clear();
+            ClassStringMulitMap1.clear();
+            Console.WriteLine("=====================================");
+            Console.WriteLine("=====================================");
+            Console.WriteLine("===============Swap==================");
+            test.Swap(test1);
+            for (var iter = test.begin(); iter != test.end(); iter++)
+            {
+                Console.WriteLine("Key : " + iter.GetKey() + "Value : " + iter.GetValue());
+            }
             while (true) { }
         }
     }

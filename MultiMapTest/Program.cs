@@ -145,9 +145,16 @@ namespace MultiMapTest
             Console.WriteLine("=====================================");
             Console.WriteLine("===============Swap==================");
             test.Swap(test1);
+            test.erase(15);
+            var testIter = test.lower_bound(15);
+            Console.WriteLine("Key : " + testIter.GetKey() + " , Value : " + testIter.GetValue());
+            testIter = test.upper_bound(15);
+            Console.WriteLine("Key : " + testIter.GetKey() + " , Value : " + testIter.GetValue());
+            Console.WriteLine("=====================================");
+            Console.WriteLine("=====================================");
             for (var iter = test.begin(); iter != test.end(); iter++)
             {
-                Console.WriteLine("Key : " + iter.GetKey() + "Value : " + iter.GetValue());
+                Console.WriteLine("Key : " + iter.GetKey() + " , Value : " + iter.GetValue());
             }
             while (true) { }
         }

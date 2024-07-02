@@ -107,9 +107,12 @@ namespace UnOrderedMultiMapTest
             }
             Console.WriteLine("=====================================");
             Console.WriteLine("=====================================");
-            var find_element = StringClassMulitMap.find("10");
 
-            Console.WriteLine(find_element.GetValue().name);
+            if (StringClassMulitMap.contains("10"))
+            {
+                var find_element = StringClassMulitMap.find("10");
+                Console.WriteLine(find_element.GetValue().name);
+            }
 
             StringClassMulitMap.clear();
 
@@ -144,8 +147,20 @@ namespace UnOrderedMultiMapTest
             test.Swap(test1);
             for (var iter = test.begin(); iter != test.end(); iter++)
             {
-                Console.WriteLine("Key : " + iter.GetKey() + "Value : " + iter.GetValue());
+                Console.WriteLine("Key : " + iter.GetKey() + " , Value : " + iter.GetValue());
             }
+
+            Console.WriteLine("=====================================");
+            Console.WriteLine("=====================================");
+            Console.WriteLine("=========copy constructor============");
+            UnOrderedMultiMapWapper.CSharpUnOrderedMultiMap<int, int> CopyUnorderedMultimap = null;
+            CopyUnorderedMultimap = new UnOrderedMultiMapWapper.CSharpUnOrderedMultiMap<int, int>(test1);
+
+            for (var iter = CopyUnorderedMultimap.begin(); iter != CopyUnorderedMultimap.end(); iter++)
+            {
+                Console.WriteLine("Key : " + iter.GetKey() + " , Value : " + iter.GetValue());
+            }
+
             while (true) { }
         }
     }

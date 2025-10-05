@@ -8,9 +8,13 @@ multimap의 클래스명은 CSharpMultiMap이고 unordered_multimap의 클래스
 
 두 함수 모두 Generics 형식입니다.
 
-enum은 Key값 또는 Value값으로 사용이 불가능합니다. enum을 사용 못하게 막았습니다.
+~enum은 Key값 또는 Value값으로 사용이 불가능합니다. enum을 사용 못하게 막았습니다.~
 
-굳이 사용하고 싶으시다면 int로 형변환하여 사용하시길 바랍니다.
+~굳이 사용하고 싶으시다면 int로 형변환하여 사용하시길 바랍니다.~
+
+이전 버전에는 enum을 Key 또는 Value로 사용할 수 없었으나, 현재는 enum도 사용 가능합니다.
+
+필요하다면 int로 형변환하여 사용하셔도 무방합니다.
 
 클래스값을 Key 값으로 설정하게되면 메모리 누수가 일어날 수 있습니다.
 
@@ -42,9 +46,13 @@ The class name for multimap is CSharpMultiMap, and for unordered_multimap, it is
 
 Both functions are in generic format.
 
-Enums cannot be used as key or value types. I've prevented the use of enums.
+~Enums cannot be used as key or value types. I've prevented the use of enums.~
 
-If you wish to use them, please convert them to int and use.
+~If you wish to use them, please convert them to int and use.~
+
+In previous versions, enums could not be used as a Key or Value, but they are now supported.
+
+If necessary, you may safely cast an enum to an int for use.
 
 If you use a class as a key value, memory leaks may occur.
 

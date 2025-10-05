@@ -51,11 +51,15 @@ You can add the DLL to your C# project and run tests with it.
 - CSharpUnOrderedMultiMap → corresponds to std::unordered_multimap
 - Both classes support Generics.
 
+---
+
 enum Support
 Enums could not be used as a Key or Value, and their usage was restricted.
 If you really wanted to use them, you had to cast them to int.
 In previous versions, enums could not be used as a Key or Value, but they are now fully supported.
 If necessary, you may still cast an enum to int for use.
+
+---
 
 Class Key Values
 Using a class as a Key could cause memory leaks.
@@ -63,15 +67,21 @@ You had to call erase(Key) or Clear() to remove class Key values and prevent lea
 Using a class as a Value did not cause memory leaks.
 In previous versions, using a class as a Key could result in memory leaks, but this issue has now been fixed and no longer occurs.
 
+---
+
 Other Features
 - Supports the foreach loop.
 - Works in 64-bit (X64) environments.
 - If you need a 32-bit (X86) version, please refer to the link below.
 https://github.com/naverstarcraft/TestingMultimapsX86
 
+---
+
 Notes
 The code is somewhat verbose and repetitive (boilerplate-heavy), so it may not be the most elegant solution.
 Unexpected errors may occur, so please use with caution.
 
 Thank you.
+
+---
 

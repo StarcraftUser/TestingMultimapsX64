@@ -32,7 +32,7 @@ C# 프로젝트에 DLL을 추가하여 테스트할 수 있습니다.
 - 64bit(X64) 환경에서 동작합니다.  
 - 32bit(X86) 버전이 필요하신 분들은 아래 링크를 참고하세요.  
 
-https://github.com/naverstarcraft/TestingMultimapsX86
+https://github.com/StarcraftUser/TestingMultimapsX86
 
 ---
 
@@ -44,7 +44,7 @@ https://github.com/naverstarcraft/TestingMultimapsX86
 
 ---
 
-C# TestingMultimapsX64
+### C# TestingMultimapsX64
 
 This project provides a DLL that wraps C++ std::multimap and std::unordered_multimap templates using C++/CLI, making them available for use in C#.
 You can add the DLL to your C# project and run tests with it.
@@ -54,7 +54,7 @@ You can add the DLL to your C# project and run tests with it.
 
 ---
 
-enum Support
+### Enum Support
 
 ~~Enums could not be used as a Key or Value, and their usage was restricted.~~
 ~~If you really wanted to use them, you had to cast them to int.~~
@@ -64,7 +64,7 @@ If necessary, you may still cast an enum to int for use.
 
 ---
 
-Class Key Values
+### Class Key Values
 
 ~~Using a class as a Key could cause memory leaks.~~
 ~~You had to call erase(Key) or Clear() to remove class Key values and prevent leaks.~~
@@ -74,15 +74,15 @@ In previous versions, using a class as a Key could result in memory leaks, but t
 
 ---
 
-Other Features
+### Other Features
 - Supports the foreach loop.
 - Works in 64-bit (X64) environments.
 - If you need a 32-bit (X86) version, please refer to the link below.
-https://github.com/naverstarcraft/TestingMultimapsX86
+https://github.com/StarcraftUser/TestingMultimapsX86
 
 ---
 
-Notes
+### Notes
 The code is somewhat verbose and repetitive (boilerplate-heavy), so it may not be the most elegant solution.
 Unexpected errors may occur, so please use with caution.
 

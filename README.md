@@ -54,6 +54,7 @@ You can add the DLL to your C# project and run tests with it.
 ---
 
 enum Support
+
 ~~Enums could not be used as a Key or Value, and their usage was restricted.~~
 ~~If you really wanted to use them, you had to cast them to int.~~
 
@@ -63,6 +64,7 @@ If necessary, you may still cast an enum to int for use.
 ---
 
 Class Key Values
+
 ~~Using a class as a Key could cause memory leaks.~~
 ~~You had to call erase(Key) or Clear() to remove class Key values and prevent leaks.~~
 ~~Using a class as a Value did not cause memory leaks.~~

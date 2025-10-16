@@ -180,6 +180,22 @@ namespace UnOrderedMultiMapTest
 			{
 				Console.WriteLine("Key : " + iter.GetKey() + " , Value : " + iter.GetValue());
 			}
+			Console.WriteLine("=====================================");
+			Console.WriteLine("=====================================");
+			Console.WriteLine("=========Enum Erase==================");
+			for (var iter = ENUMTEST.begin(); iter != ENUMTEST.end();)
+			{
+				if (iter.GetKey() == enumtest.None)
+				{
+					ENUMTEST.erase(ref iter);
+				}
+				else iter++;
+			}
+			for (var iter = ENUMTEST.begin(); iter != ENUMTEST.end(); iter++)
+			{
+				Console.WriteLine("Key : " + iter.GetKey() + " , Value : " + iter.GetValue());
+			}
+
 			while (true) { }
 		}
 	}

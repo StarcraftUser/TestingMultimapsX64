@@ -171,7 +171,8 @@ namespace UnOrderedMultiMapTest
 
 			for (int i = 20; i >= 0; i--)
 			{
-				ENUMTEST.emplace((enumtest)randomTest.Next(0, 26), (i + 2));
+				KeyValuePair<enumtest, int> KeyValuePairtest = new KeyValuePair<enumtest, int>((enumtest)randomTest.Next(0, 26), (i + 2));
+				ENUMTEST.emplace(KeyValuePairtest);
 			}
 			Console.WriteLine("=====================================");
 			Console.WriteLine("=====================================");
@@ -185,7 +186,7 @@ namespace UnOrderedMultiMapTest
 			Console.WriteLine("=========Enum Erase==================");
 			for (var iter = ENUMTEST.begin(); iter != ENUMTEST.end();)
 			{
-				if (iter.GetKey() == enumtest.None)
+				if (iter.GetKey() <= enumtest.c)
 				{
 					ENUMTEST.erase(ref iter);
 				}
